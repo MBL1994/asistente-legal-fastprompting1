@@ -1,61 +1,72 @@
 
 # ⚖️ Asistente Legal Automatizado con IA para Emitir Dictamen Jurídico
 
-## 📌 Introducción
+Presentación del problema: 
 
-Este proyecto corresponde a la Preentrega #2 del curso "IA: Generación de Prompts" de Coderhouse.
+La elaboración de dictámenes jurídicos en organismos públicos suele ser una tarea repetitiva, altamente técnica y consumidora de tiempo. Muchos dictámenes responden a situaciones similares, con marcos normativos estables, lo que vuelve ineficiente la redacción manual desde cero en cada caso. Automatizar esta tarea permitiría liberar recursos profesionales, acelerar procesos administrativos y aumentar la coherencia técnica en los textos producidos. 
 
-El objetivo es aplicar técnicas de Fast Prompting para generar dictámenes jurídicos preliminares utilizando modelos de lenguaje (ChatGPT) a través de una notebook Jupyter.
+Desarrollo de la propuesta de solución: 
 
-## 📁 Estructura del repositorio
+La propuesta consiste en diseñar una prueba de concepto (POC) en una Jupyter Notebook que aplique técnicas de Fast Prompting para generar automáticamente dictámenes jurídicos preliminares. Se utilizará la API de OpenAI con prompts optimizados, que incluyan roles definidos, estructura paso a paso y contexto legal relevante. Los resultados serán comparados contra un enfoque tradicional de prompting para demostrar las mejoras en claridad, precisión y estilo jurídico. 
 
-- `POC_Asistente_Legal_IA.ipynb`: Notebook principal con la prueba de concepto.
-- `README.md`: Este archivo con detalles del proyecto.
-- `.env.example`: Archivo de ejemplo para configurar tu clave API de OpenAI.
+Justificación de la viabilidad del proyecto: 
 
-## 🛠️ Tecnologías utilizadas
+El proyecto es técnicamente viable porque se basa en herramientas accesibles y ampliamente utilizadas como Python, Jupyter Notebook y la API de OpenAI. No requiere entrenamiento de modelos ni uso de bases de datos confidenciales, y se enfoca en situaciones tipo, legalmente estandarizadas. Además, el enfoque de Fast Prompting permite aprovechar al máximo las capacidades del modelo sin incurrir en múltiples llamadas innecesarias, optimizando también los costos de uso de la API. 
 
-- Python 3.10
-- OpenAI API (ChatGPT 3.5)
-- Jupyter Notebook
-- Fast Prompting
-- Librerías: `openai`, `dotenv`, `os`
+Objetivos 
 
-## 🚀 Cómo usar este repositorio
+- Implementar una solución automatizada para generar dictámenes jurídicos preliminares. 
+- Aplicar técnicas de Fast Prompting para optimizar la calidad del texto legal generado. 
+- Evaluar comparativamente la eficacia del enfoque tradicional vs. Fast Prompting. 
+- Demostrar la factibilidad del proyecto para escalar a otros tipos de documentos legales. 
 
-1. Cloná o descargá este repositorio.
-2. Creá un archivo `.env` (basado en `.env.example`) y agregá tu clave API de OpenAI:
+Metodología 
 
-```
-OPENAI_API_KEY=sk-tu-clave-aqui
-```
+1. Análisis de un caso administrativo tipo donde se solicita el otorgar un legitimo abono a un proveedor para abonar una factura de un ejercicio anterior al vigente. 
+2. Generación de un dictamen con un prompt tradicional para establecer una línea base. 
+3. Redacción de un prompt optimizado utilizando Fast Prompting (instrucciones detalladas, rol, estructura). 
+4. Ejecución de ambos prompts en ChatGPT vía Jupyter Notebook. 
+5. Comparación cualitativa de los resultados. 
+6. Reflexión sobre mejoras observadas y posibles ajustes futuros. 
 
-3. Activá tu entorno virtual en Anaconda Prompt:
+Herramientas y tecnologías 
 
-```
-conda activate generacion-de-prompts
-```
+- Python 3.10 
+- Jupyter Notebook 
+- OpenAI API (modelo GPT-3.5) 
+- Librerías: openai, dotenv 
+- Fast Prompting (técnica de ingeniería de prompts con contexto estructurado y guía de roles) 
+- NightCafe o DALL·E (opcional, para visualización de esquemas complementarios) 
 
-4. Ejecutá Jupyter Notebook:
+Implementación 
 
-```
-jupyter notebook
-```
+Se desarrollaron dos prompts: 
+ 
+1. Prompt tradicional: 
+   "Redactá un dictamen jurídico sobre un legítimo abono a un proveedor para abonar una factura de un ejercicio anterior al vigente." 
+ 
+2. Prompt con Fast Prompting: 
 
-5. Abrí `POC_Asistente_Legal_IA.ipynb` y ejecutá las celdas.
+   Rol: Sos abogado de la Subsecretaría Legal y Técnica del Municipio de Vicente López, Provincia de Buenos Aires, especializado en derecho administrativo. Entra a consulta un expediente sobre la viabilidad de otorgar un legítimo abono a un proveedor que se le debe abonar una factura. Analiza si corresponde o no, en base a la siguiente instrucción:  
+   Instrucción: 
+    
+    Antecedentes a verificar en el expediente:  
 
-## 📌 Objetivo del proyecto
+Contar con orden de compra 
 
-Demostrar que el uso de Fast Prompting mejora la calidad, claridad y precisión en la redacción automatizada de dictámenes jurídicos para el sector público, aplicando criterios técnicos y normativa vigente.
+Factura firmada por el secretario del área ejecutora 
 
-## 🧠 Conclusión
+Informe del área ejecutora 
 
-Fast Prompting resultó efectivo para guiar al modelo de lenguaje en la elaboración de dictámenes claros, breves y jurídicamente fundados.
+Informe de la Dirección General de Contaduría que indique el ejercicio que hubiera correspondido  
 
-## 📎 Recurso visual (opcional)
+   Normativa aplicable: Ley Orgánica de las Municipalidades de la Provincia de Buenos Aires y Artículo 140 del Reglamento de Contabilidad y Disposiciones de Administración. 
 
-Se sugiere complementar con herramientas de generación de imagen como NightCafe o DALL·E en caso de requerir visuales.
+Respuestas:  
 
-## 🧷 Licencia
+- Positiva: Es de un ejercicio anterior al vigente y no fue abonada en tiempo y forma, corresponde el legítimo abono por cumplir con las disposiciones del artículo 140 del Reglamento de Contabilidad y Disposiciones de Administración, sugiriendo sean remitidos al Honorable Conejo Deliberante a fin de sancionar la ordenanza pertinente.  
 
-Uso educativo. Proyecto final de estudiante del curso de Coderhouse.
+-Negativa: Es del ejercicio vigente y no fue abonada, no corresponde el legítimo abono.  
+
+   Objetivo: Emitir un dictamen breve, claro y fundado jurídicamente. 
+
