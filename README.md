@@ -70,3 +70,8 @@ Respuestas:
 
    Objetivo: Emitir un dictamen breve, claro y fundado jurídicamente. 
 
+## 🖼️ Visual institucional 
+
+Este proyecto incluye una imagen generada con la API de Google Gemini como cierre institucional del servicio automatizado.
+
+![Gracias por usar este servicio](gracias_servicio.png)
